@@ -1,0 +1,22 @@
+import pymongo
+
+# Establish a connection to MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# Create a database object
+mydb = client["mydatabase"]
+
+# Create a collection object
+mycol = mydb["mycollection"]
+
+
+#myquery = {"Эцэг эхийн нэр" : "Бат-оргил"}
+myquery = {"Дугаар" : 1}
+
+#mycol.delete_one(myquery)
+mycol.delete_many(myquery)
+
+mycol.find(myquery).count();
+
+
+
